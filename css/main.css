@@ -1,5 +1,6 @@
 body{
     margin:0;
+    font-family: 'Mountains of Christmas', cursive;
 }
 
 #wrapper{
@@ -13,7 +14,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: baseline;
 }
 
 #logo{
@@ -24,6 +24,7 @@ body{
     font-weight: bolder;
     color:white;
     text-align: center;
+    font-size: 25px;
 }
 
 #newGameBtn{
@@ -40,7 +41,9 @@ body{
     justify-content: space-around;
 }
 
-.card{
+
+
+.cardEasy{
     width: 20%;
     margin: 1%;
     background-size: contain;
@@ -48,6 +51,77 @@ body{
     background-repeat: no-repeat;
 }
 
+
+.cardMedium{
+    width: 13%;
+    margin: 1%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cardHard{
+    width: 10%;
+    margin: 1%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .backgroundCard{
     background-image: url(../img/background.jpg) !important;
+}
+
+#popup{
+    display:flex;
+    flex-direction: column;
+    background:white;
+    align-items: center;
+    position: fixed;
+    top:25%;
+    left:50%;
+    height:50%;
+    width:50%;
+    justify-content: space-around;
+    padding:10px;
+    transform: translateX(-50%);
+    background-image: url(../img/popup.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size:25px;
+}
+
+.btnOption{
+    justify-content: center;
+    width:100px;
+    flex-shrink:0;
+}
+
+.counterContainer{
+    display:flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: large;
+    margin-right: 75%;
+}
+
+#win{
+    display:flex;
+    flex-direction: column;
+    background:white;
+    align-items: center;
+    position: fixed;
+    top:25%;
+    left:50%;
+    height:50%;
+    width:50%;
+    justify-content: space-around;
+    padding:10px;
+    transform: translateX(-50%);
+    background-image: url(../img/popup.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size:25px;
 }
