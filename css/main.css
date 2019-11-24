@@ -1,84 +1,53 @@
- body{
+body{
     margin:0;
-    box-sizing: border-box;
-    background-color:lightblue ;
+}
+
+#wrapper{
     display:flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    background-image: url('../img/Mount-Everest.jpg');
+    width:100vw;
     height:100vh;
-    /* 
-    background-color: #f9ea8f;
-background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%); */
-
-
- }
-
- .activate{
-    box-shadow: 2px 3px 28px -1px rgba(0,0,0,0.75);
-    
- }
- /*.activateShape{
-     background-color:white;
- }*/
- 
- #canvas{
-    /*  height:500px;
-     width:500px;
-     */ border:1px solid black;
-     display:inline-block;  
-     margin:2%;
-     box-shadow: 0px 6px 40px 0px rgba(0,0,0,0.75);
-     transition: width 1s ease-out, height 1s ease-in;
- }
-
- #leftBar{
-     height:auto;
-     width:160px;
-     display:inline-block;
-     position: relative;
-     align-items: center;
-     border:1px solid black;
-     padding:1%;
-     background-color:salmon;
-     border-radius: 15%;
-     box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
- }
-
- .row{
-     height:80px;
-     width:100%;
-     justify-content: center;
-     margin-top: 3px;
- }
- .box{
-     height:100%;
-     width:50%;
-     display: inline-block;
-     border-radius: 50%;
- }
-
- #rowThree{
+}
+#header{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
- }
+    justify-content: baseline;
+}
 
- #star{
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid red;
-    position: absolute;
- }
+#logo{
+    height:80px;
+}
 
- .bg-none{
-     background-color:none !important; 
-     border: none !important;
- }
+#logoText{
+    font-weight: bolder;
+    color:white;
+    text-align: center;
+}
 
- #wrap{
-     display:flex;
-     justify-content: center;
-     align-items: center;
- }
+#newGameBtn{
+    height:20px;
+    width:auto;
+    background-color: blue;
+}
+
+#playField{
+    display:flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    margin:0px 10% 0px 10%;
+    justify-content: space-around;
+}
+
+.card{
+    width: 20%;
+    margin: 1%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.backgroundCard{
+    background-image: url(../img/background.jpg) !important;
+}
