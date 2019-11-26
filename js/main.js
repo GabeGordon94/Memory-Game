@@ -232,31 +232,6 @@ function setUpHardGame() {
         board.show();
     }
 }
-/* 
-function setUpHardGame() {
-    maxScore = 12;
-    guesses = 0;
-    $('#counter').text(null);
-    board.empty();
-    openedCards = [];
-    score = 0;
-    $('#popup').hide();
-
-    let hardImages = ['one.jpg', 'two.jpg', 'three.jpg', 'four.jpg', 'five.jpg', 'six.jpg', 'seven.jpg',
-        'eight.jpg', 'nine.jpg', 'ten.jpg', 'eleven.jpg', 'twelve.jpg'];
-    var cards = hardImages;
-    cards = cards.concat(hardImages);
-    cards = shuffle(cards);
-    for (var i = 0; i < cards.length; i++) {
-        let card = document.createElement('div');
-        card.className = `card cardHard ${backgroundClass}`;
-        //card.style.backgroundImage=`url('img/${backgroundImg}')`;
-        card.addEventListener('click', flip);
-        card.style.backgroundImage = `url('img/${cards[i]}')`;
-        board.append(card);
-    }
-    board.show();
-} */
 function showOptions() {
     $('#changeTheme').show();
     board.hide()
@@ -279,6 +254,14 @@ function popUpNewGame() {
 function winScreen() {
     $('#changeTheme').show();
     board.hide();
+
+    if (maxScore == 6) {//easy game
+        checkEasyHighScore();
+    } else if (maxScore == 9) {
+        checkMediumHighScore();
+    } else {
+        checkHardHighScore();
+    }
 
     let $winScr = $('#win');
     $winScr.empty();
@@ -327,6 +310,22 @@ function toggleTheme() {
     console.log(theme);
 }
 
+//highScore
+let easy = JSON.parse(localStorage.getItem('easyHighScore'));
+let easyName = Object.keys(easy);
+let easyScore = Object.values(easy);
+
+let medium = JSON.parse(localStorage.getItem('mediumHighScore'));
+let mediumName = Object.keys(medium);
+let mediumScore = Object.values(medium);
+
+let hard = JSON.parse(localStorage.getItem('hardHighScore'));
+let hardName = Object.keys(hard);
+let hardScore = Object.values(hard);
+let nameUser;
+
+
+//stati
 let title = "Nature";
 let backgroundClass = 'backgroundCard'
 let theme = 'nature';
@@ -338,3 +337,53 @@ let board = $('#playField');
 popUpNewGame();
 $('#logoText').text("Nature's Memory Game");
 $('#newGameBtn').on('click', showOptions);
+$('#highScore').click(function () {
+    updateHighScore();
+    $('#highScoreDetails').toggle();
+});
+
+
+//highscore implementation
+function checkEasyHighScore() {
+    if (easyScore== undefined || easyScore > guesses) {
+        nameUser = prompt('You have the highScore! \n What is your name?');
+        localStorage.setItem('easyHighScore', JSON.stringify({ [nameUser]: guesses }));
+        updateHighScore();
+    }
+
+}
+function checkMediumHighScore() {
+    if (mediumScore == undefined ||mediumScore > guesses) {
+        nameUser = prompt('You have the highScore! \n What is your name?');
+        localStorage.setItem('mediumHighScore', JSON.stringify({ [nameUser]: guesses }));
+        updateHighScore();
+    }
+
+}
+function checkHardHighScore() {
+    if (hardScore == undefined || hardScore > guesses) {
+        nameUser = prompt('You have the highScore! \n What is your name?');
+        localStorage.setItem('hardHighScore', JSON.stringify({ [nameUser]: guesses }));
+        updateHighScore();
+    }
+}
+
+function updateHighScore() {
+    easy = JSON.parse(localStorage.getItem('easyHighScore'));
+    easyName = Object.keys(easy);
+    easyScore = Object.values(easy);
+    
+    medium = JSON.parse(localStorage.getItem('mediumHighScore'));
+    mediumName = Object.keys(medium);
+    mediumScore = Object.values(medium);
+    
+    hard = JSON.parse(localStorage.getItem('hardHighScore'));
+    hardName = Object.keys(hard);
+    hardScore = Object.values(hard);
+
+    $('#easyHS').text(`${easyName}: ${easyScore}`);
+    $('#mediumHS').text(`${mediumName}: ${mediumScore}`);
+    $('#hardHS').text(`${hardName}: ${hardScore}`);
+
+
+}

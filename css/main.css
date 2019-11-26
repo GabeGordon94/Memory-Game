@@ -207,3 +207,24 @@ button {
       height: 30px;
       font-size:10px;
   }
+  #highScore{
+      position:absolute;
+      right:1%;
+      top:1%;
+      background:lightskyblue;
+      justify-content: center;
+      padding:4px;
+      width:10%;
+      text-align: center;
+  }
+
+  #highScoreDetails{
+      display:none;
+  }
+  #hsTitle{
+      margin:0;
+  }
+
+  .changeFontFam{
+      font-family: 'Courier New', Courier, monospace;
+  }
