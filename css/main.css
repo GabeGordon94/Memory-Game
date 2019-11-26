@@ -141,6 +141,9 @@ body{
     flex-shrink:0;
 }
 
+#counter{
+    color:red;
+}
 .counterContainer{
     display:flex;
     justify-content: flex-end;
@@ -202,10 +205,10 @@ button {
   #header #changeTheme{
       position: fixed;
       right:1%;
-      bottom:1%;
+      bottom:2%;
       width:150px;
       height: 30px;
-      font-size:10px;
+      font-size:12px;
   }
   #highScore{
       position:absolute;
@@ -227,4 +230,10 @@ button {
 
   .changeFontFam{
       font-family: 'Courier New', Courier, monospace;
+  }
+
+  @media screen and (max-width:400px){
+    .btnOption{
+        width:100%;
+    }
   }

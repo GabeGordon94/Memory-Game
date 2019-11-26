@@ -6,14 +6,11 @@ function shuffle(arr) {
 
 function flip(e) {
     let ele = e.target;
-    //console.log(ele);
     $(ele).removeClass(`${backgroundClass}`);
 
-    console.log($(ele).css('background-image'));
 
 
     if (openedCards[0] == undefined) {
-        //console.log(ele);
         openedCards.push(ele);
         ele.removeEventListener('click', flip);
 
@@ -22,20 +19,16 @@ function flip(e) {
         ele.removeEventListener('click', flip);
         //cards stay put
         score++;
-        /* console.log('same' );*/
-        /* console.log(score); */
         if (score == maxScore) {
             winScreen();
         }
         //clear array
         openedCards = [];
     } else {
-        /* console.log('wrong' );*/
         guesses++;
         $('#counter').text(guesses);
         $('.card').css('pointer-events', 'none');
         setTimeout(function (e) {
-            //console.log('timeout');
             $(ele).addClass(`${backgroundClass}`);
             $(openedCards[0]).addClass(`${backgroundClass}`);
             openedCards[0].addEventListener('click', flip);
@@ -65,11 +58,8 @@ function setUpEasyGame() {
         $.get({
             url: 'https://picsum.photos/v2/list?limit=6',
             success: function (data) {
-                console.log(data);
                 for (var i = 0; i < data.length; i++) {
-                    console.log(typeof data[i].download_url);
                     easyImages.push(data[i].download_url);
-                    console.log('got here');
                     if (easyImages.length == 6) {
                         addAPICards();
                     }
@@ -127,11 +117,8 @@ function setUpMediumGame() {
         $.get({
             url: 'https://picsum.photos/v2/list?limit=9',
             success: function (data) {
-                console.log(data);
                 for (var i = 0; i < data.length; i++) {
-                    console.log(typeof data[i].download_url);
                     mediumImages.push(data[i].download_url);
-                    console.log('got here');
                     if (mediumImages.length == 9) {
                         addAPICards();
                     }
@@ -189,11 +176,8 @@ function setUpHardGame() {
         $.get({
             url: 'https://picsum.photos/v2/list?limit=12',
             success: function (data) {
-                console.log(data);
                 for (var i = 0; i < data.length; i++) {
-                    console.log(typeof data[i].download_url);
                     hardImages.push(data[i].download_url);
-                    console.log('got here');
                     if (hardImages.length == 12) {
                         addAPICards();
                     }
@@ -289,7 +273,6 @@ function toggleTheme() {
         $popup.addClass('popupAPI');
         $win.removeClass('winNature');
         $win.addClass('winAPI');
-        console.log(title);
         $('#title').text(`Welcome to ${title}!`);
         $('#logoText').text(`${title} Memory Game`);
 
@@ -307,7 +290,6 @@ function toggleTheme() {
         $('#logoText').text(`${title} Memory Game`);
 
     }
-    console.log(theme);
 }
 
 //highScore
