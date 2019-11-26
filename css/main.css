@@ -3,10 +3,20 @@ body{
     font-family: 'Mountains of Christmas', cursive;
 }
 
-#wrapper{
+.wrapperNature{
     display:flex;
     flex-direction: column;
     background-image: url('../img/Mount-Everest.jpg');
+    width:100vw;
+    height:100vh;
+}
+
+.wrapperAPI{
+    display:flex;
+    flex-direction: column;
+    background-image: url('../img/wrapperbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     width:100vw;
     height:100vh;
 }
@@ -48,7 +58,8 @@ body{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    transition: background-image 0s ;
+    transition: transform .8s ;
+    
 }
 
 
@@ -58,6 +69,7 @@ body{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    transition: transform .8s ;
 }
 
 .cardHard{
@@ -66,13 +78,20 @@ body{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    transition: transform .8s ;
 }
 .backgroundCard{
     background-image: url(../img/background.jpg) !important;
+    transform: rotateY(180deg)
     
 }
 
-#popup{
+.backgroundCardAPI{
+    background-image: url(../img/backgroundAPI.jpg) !important;
+    transform: rotateY(180deg)
+}
+
+.popupNature{
     display:flex;
     flex-direction: column;
     background:white;
@@ -86,6 +105,29 @@ body{
     padding:10px;
     transform: translateX(-50%);
     background-image: url(../img/popup.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size:25px;
+     border: 5px solid #ddd;
+  border-radius: 4px;
+}
+
+
+.popupAPI{
+    display:flex;
+    flex-direction: column;
+    background:white;
+    align-items: center;
+    position: fixed;
+    top:30%;
+    left:50%;
+    height:50%;
+    width:50%;
+    justify-content: space-around;
+    padding:10px;
+    transform: translateX(-50%);
+    background-image: url(../img/popupAPI.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -111,7 +153,6 @@ body{
 #win{
     display:flex;
     flex-direction: column;
-    background:white;
     align-items: center;
     position: fixed;
     top:30%;
@@ -121,11 +162,16 @@ body{
     justify-content: space-around;
     padding:10px;
     transform: translateX(-50%);
-    background-image: url(../img/popup.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     font-size:25px;
+}
+.winNature{
+    background-image: url(../img/popup.jpg);
+}
+.winAPI{
+    background-image: url(../img/popupAPI.jpg);
 }
 
 button {
